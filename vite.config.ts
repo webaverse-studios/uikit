@@ -7,6 +7,11 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import path from 'path';
 
 export default defineConfig({
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+    },
+  },
   plugins: [
     react(),
     tsconfigPaths(),
@@ -35,7 +40,7 @@ export default defineConfig({
   test: {
     // you might want to disable it, if you don't have tests that rely on CSS
     // since parsing CSS is slow
-    css: true,
+    css: false,
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
