@@ -4,7 +4,7 @@ Library to host common utilities and components for Webaverse projects.
 
 ## Components
 
-[BackButton](src/components/BackButton/index.tsx) - A basic back button component
+[Button](src/components/Button/index.tsx) - Genric button component
 
 ## Installation
 
