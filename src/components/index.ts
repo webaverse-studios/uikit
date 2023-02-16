@@ -1,3 +1,3 @@
 import './index.css';
 
-export { BackButton } from './BackButton';
+export { default as Button } from './Button';

@@ -21,7 +21,8 @@
     "paths": {
       "webaverse_components": ["src/index.ts"]
     },
-    "typeRoots": ["node_modules/@types", "src/index.d.ts"]
+    "typeRoots": ["node_modules/@types", "src/index.d.ts"],
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
