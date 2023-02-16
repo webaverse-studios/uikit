@@ -19,11 +19,10 @@
     "declarationMap": true,
     "baseUrl": ".",
     "paths": {
-      "webaverse_components": ["src/index.ts"]
+      "@/uikit/*": ["src/*"]
     },
-    "typeRoots": ["node_modules/@types", "src/index.d.ts"],
-    "jsxImportSource": "@emotion/react"
+    "typeRoots": ["node_modules/@types", "src/index.d.ts"]
   },
-  "include": ["src"],
+  "include": ["src", "test"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

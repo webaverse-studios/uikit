@@ -1,10 +1,12 @@
-import * as packageJson from './package.json';
+import path from 'path';
 
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vitest/config';
+import hq from 'alias-hq';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import path from 'path';
+import { defineConfig } from 'vitest/config';
+
+import * as packageJson from './package.json';
 
 export default defineConfig({
   css: {
@@ -13,17 +15,15 @@ export default defineConfig({
     },
   },
   plugins: [
-    react({
-      jsxImportSource: '@emotion/react',
-      babel: {
-        plugins: ['@emotion/babel-plugin'],
-      },
-    }),
+    react(),
     tsconfigPaths(),
     dts({
       insertTypesEntry: true,
     }),
   ],
+  resolve: {
+    alias: hq.get('rollup'),
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
@@ -55,6 +55,6 @@ export default defineConfig({
     css: false,
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
+    setupFiles: './test/setup.ts',
   },
 });

@@ -1,1 +1,3 @@
-export * from './components';
+import './index.css';
+
+export * from './components/Button';
