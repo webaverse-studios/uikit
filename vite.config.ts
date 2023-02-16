@@ -16,10 +16,10 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/components/index.ts'),
-      name: 'webaverse_components',
+      entry: path.resolve(__dirname, 'src/index.ts'),
+      name: 'uikit',
       formats: ['es', 'umd'],
-      fileName: (format) => `webaverse_components.${format}.js`,
+      fileName: (format) => `uikit.${format}.js`,
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],

@@ -1,19 +1,18 @@
 {
-  "name": "webaverse_commons",
-  "private": true,
-  "version": "0.1.0",
+  "name": "@webaverse-studios/uikit",
+  "version": "0.0.1-rc",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/my-lib.umd.js",
-  "module": "./dist/my-lib.es.js",
+  "main": "./dist/uikit.umd.js",
+  "module": "./dist/uikit.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     "./dist/style.css": "./dist/style.css",
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.js"
+      "import": "./dist/uikit.es.js",
+      "require": "./dist/uikit.umd.js"
     }
   },
   "scripts": {
@@ -83,5 +82,8 @@
       "yarn lint",
       "yarn format"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
