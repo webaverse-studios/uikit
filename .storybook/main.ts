@@ -1,7 +1,11 @@
-import { mergeConfig } from 'vite';
-import type { StorybookConfig } from '@storybook/react-vite';
+import type { StorybookConfig as ViteStoryBookConfig } from '@storybook/react-vite';
+import type { StorybookConfig } from '@storybook/types';
 
-const config: StorybookConfig = {
+import { mergeConfig } from 'vite';
+
+type Config = ViteStoryBookConfig & StorybookConfig;
+
+const config: Config = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -12,12 +16,19 @@ const config: StorybookConfig = {
     builder: '@storybook/builder-vite', // 👈 The builder enabled here.
   },
   framework: {
-    name: '@storybook/react-vite',
     options: {},
+    name: '@storybook/react-vite',
   },
-  docs: {
-    autodocs: 'tag',
-  },
+  docs: { autodocs: 'tag', enabled: true },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+    },
+  } as StorybookConfig['typescript'],
   async viteFinal(config) {
     // Merge custom configuration into the default config
     return mergeConfig(config, {

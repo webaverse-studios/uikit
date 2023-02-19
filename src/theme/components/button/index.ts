@@ -1,14 +1,11 @@
 import type { Obj } from '@/uikit/types';
 import type { variant, size, color, fullWidth, className } from '@/uikit/types/components/button';
-
 import { propTypesVariant, propTypesSize, propTypesColor } from '@/uikit/types/components/button';
 
 import buttonFilled from './buttonFilled';
 import buttonGradient from './buttonGradient';
 import buttonOutlined from './buttonOutlined';
 import buttonText from './buttonText';
-
-// types
 
 export interface DefaultButtonProps {
   size: size;

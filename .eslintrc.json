@@ -54,8 +54,8 @@
             "position": "before"
           },
           {
-            "pattern": "@/uikit**",
-            "group": "external",
+            "pattern": "@/uikit/**",
+            "group": "internal",
             "position": "after"
           }
         ],

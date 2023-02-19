@@ -1,12 +1,3 @@
-import type {
-  variant,
-  size,
-  color,
-  fullWidth,
-  className,
-  children,
-} from '@/uikit/types/components/button';
-
 import React, { ComponentProps, forwardRef } from 'react';
 
 import classnames from 'classnames';
@@ -15,6 +6,14 @@ import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '@/uikit/context/theme';
 import { ButtonStyleProps } from '@/uikit/theme';
+import type {
+  variant,
+  size,
+  color,
+  fullWidth,
+  className,
+  children,
+} from '@/uikit/types/components/button';
 import {
   propTypesVariant,
   propTypesSize,
@@ -94,6 +93,6 @@ Button.propTypes = {
   children: propTypesChildren,
 };
 
-Button.displayName = 'MaterialTailwind.Button';
+Button.displayName = 'WebaverseTailwind.Button';
 
 export default Button;

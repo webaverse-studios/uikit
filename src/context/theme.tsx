@@ -11,7 +11,7 @@ import combineMerge from '../utils/combineMerge';
 export type WebaverseThemeContext = typeof theme & { [x: string]: unknown };
 
 const WebaverseTailwindTheme = createContext<WebaverseThemeContext>(theme);
-WebaverseTailwindTheme.displayName = 'MaterialTailwindThemeProvider';
+WebaverseTailwindTheme.displayName = 'WebaverseTailwindThemeProvider';
 
 export interface ThemeProviderProps {
   children?: React.ReactNode;
