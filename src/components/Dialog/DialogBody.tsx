@@ -16,8 +16,8 @@ import objectsToString from '@/uikit/utils/objectsToString';
 
 export interface DialogBodyProps extends ComponentProps<'div'> {
   divider?: divider;
-  className?: className;
   children: children;
+  className?: className;
 }
 
 export const DialogBody = forwardRef<HTMLDivElement, DialogBodyProps>(

@@ -50,18 +50,19 @@ export interface DialogProps extends ComponentProps<'div'> {
   size?: size;
   dismiss?: dismiss;
   animate?: animate;
-  className?: className;
   children: children;
+  className?: className;
+  transparent?: boolean;
 }
 
 const Dialog = forwardRef<HTMLDivElement, DialogProps>(
-  ({ open, handler, size, dismiss, animate, className, children, ...rest }, ref) => {
+  ({ open, handler, size, dismiss, animate, className, children, transparent, ...rest }, ref) => {
     // 1. init
     const { dialog } = useTheme();
 
     const {
-      defaultProps,
       valid,
+      defaultProps,
       styles: { base, sizes },
     } = dialog;
 
@@ -80,34 +81,30 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
         objectsToString(
           sizes[findMatch(valid.sizes, size, 'md') as keyof DialogStyleProps['sizes']],
         ),
+        transparent && 'bg-transparent shadow-none',
       ),
       className,
     );
 
+    console.log(dialogClasses);
+
     // 4. set animation
     const animation = {
       unmount: {
-        opacity: 0,
         y: -50,
-        transition: {
-          duration: 0.3,
-        },
+        opacity: 0,
+        transition: { duration: 0.3 },
       },
       mount: {
-        opacity: 1,
         y: 0,
-        transition: {
-          duration: 0.3,
-        },
+        opacity: 1,
+        transition: { duration: 0.3 },
       },
     };
 
     const backdropAnimation = {
       unmount: {
         opacity: 0,
-        transition: {
-          delay: 0.2,
-        },
       },
       mount: {
         opacity: 1,
@@ -141,20 +138,15 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
       <FloatingPortal>
         <NewAnimatePresence>
           {open && (
-            <FloatingOverlay
-              style={{
-                zIndex: 9999,
-              }}
-              lockScroll
-            >
+            <FloatingOverlay style={{ zIndex: 9999 }} lockScroll>
               <FloatingFocusManager context={context}>
                 <motion.div
-                  className={size === 'xxl' ? '' : backdropClasses}
-                  initial="unmount"
                   exit="unmount"
-                  animate={open ? 'mount' : 'unmount'}
+                  initial="unmount"
                   variants={backdropAnimation}
                   transition={{ duration: 0.2 }}
+                  animate={open ? 'mount' : 'unmount'}
+                  className={size === 'xxl' ? '' : backdropClasses}
                 >
                   <motion.div
                     {...getFloatingProps({
@@ -164,10 +156,10 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
                       'aria-labelledby': labelId,
                       'aria-describedby': descriptionId,
                     })}
-                    initial="unmount"
                     exit="unmount"
-                    animate={open ? 'mount' : 'unmount'}
+                    initial="unmount"
                     variants={appliedAnimation}
+                    animate={open ? 'mount' : 'unmount'}
                   >
                     {children}
                   </motion.div>

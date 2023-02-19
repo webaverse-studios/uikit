@@ -42,9 +42,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const { base, variants, sizes } = styles;
 
     // 2. set default props
-    variant = variant ?? defaultProps.variant;
     size = size ?? defaultProps.size;
     color = color ?? defaultProps.color;
+    variant = variant ?? defaultProps.variant;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
     className = className ?? defaultProps.className;
 
@@ -55,9 +55,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         findMatch(valid.colors, color, 'blue')
       ],
     );
+
     const buttonSize = objectsToString(
       sizes[findMatch(valid.sizes, size, 'md') as keyof ButtonStyleProps['sizes']],
     );
+
     const classes = twMerge(
       classnames(buttonBase, buttonSize, buttonVariant, {
         [objectsToString(base.fullWidth)]: fullWidth,
@@ -74,7 +76,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         type={rest.type || 'button'}
         onMouseDown={(e) => {
           const onMouseDown = rest?.onMouseDown;
-
           return typeof onMouseDown === 'function' && onMouseDown(e);
         }}
       >
@@ -85,12 +86,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.propTypes = {
-  variant: oneOf(propTypesVariant),
   size: oneOf(propTypesSize),
+  children: propTypesChildren,
   color: oneOf(propTypesColor),
   fullWidth: propTypesFullWidth,
   className: propTypesClassName,
-  children: propTypesChildren,
+  variant: oneOf(propTypesVariant),
 };
 
 Button.displayName = 'WebaverseTailwind.Button';

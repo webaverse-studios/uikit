@@ -23,19 +23,19 @@ const dialogBody: DialogBodyStylesType = {
   styles: {
     base: {
       initial: {
-        position: 'relative',
         p: 'p-4',
+        position: 'relative',
+        fontSize: 'text-base',
+        fontFamily: 'font-sans',
+        fontWeight: 'font-light',
         color: 'text-blue-gray-500',
         fontSmoothing: 'antialiased',
-        fontFamily: 'font-sans',
-        fontSize: 'text-base',
-        fontWeight: 'font-light',
         lineHeight: 'leading-relaxed',
       },
       divider: {
         borderTop: 'border-t',
-        borderTopColor: 'border-t-blue-gray-100',
         borderBottom: 'border-b',
+        borderTopColor: 'border-t-blue-gray-100',
         borderBottomColor: 'border-b-blue-gray-100',
       },
     },

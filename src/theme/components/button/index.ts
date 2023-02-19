@@ -22,16 +22,9 @@ export interface ButtonValidProps {
 }
 
 export interface ButtonStyleProps {
-  base: {
-    initial: Obj;
-    fullWidth: Obj;
-  };
+  base: { initial: Obj; fullWidth: Obj };
 
-  sizes: {
-    sm: Obj;
-    md: Obj;
-    lg: Obj;
-  };
+  sizes: { sm: Obj; md: Obj; lg: Obj };
 
   variants: {
     text: typeof buttonText;
@@ -49,59 +42,59 @@ export interface ButtonStyleTypes {
 
 const button: ButtonStyleTypes = {
   defaultProps: {
-    variant: 'filled',
     size: 'md',
+    className: '',
     color: 'blue',
     fullWidth: false,
-    className: '',
+    variant: 'filled',
   },
   valid: {
-    variants: propTypesVariant,
     sizes: propTypesSize,
     colors: propTypesColor,
+    variants: propTypesVariant,
   },
   styles: {
     base: {
       initial: {
-        verticalAlign: 'align-middle',
-        userSelect: 'select-none',
         fontFamily: 'font-sans',
         fontWeight: 'font-bold',
         textAlign: 'text-center',
+        userSelect: 'select-none',
         textTransform: 'uppercase',
         transition: 'transition-all',
+        verticalAlign: 'align-middle',
         disabled: 'disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none',
       },
       fullWidth: {
-        display: 'block',
         width: 'w-full',
+        display: 'block',
       },
     },
     sizes: {
       sm: {
-        fontSize: 'text-xs',
         py: 'py-2',
         px: 'px-4',
+        fontSize: 'text-xs',
         borderRadius: 'rounded-lg',
       },
       md: {
-        fontSize: 'text-xs',
         py: 'py-3',
         px: 'px-6',
+        fontSize: 'text-xs',
         borderRadius: 'rounded-lg',
       },
       lg: {
-        fontSize: 'text-sm',
-        py: 'py-3.5',
         px: 'px-7',
+        py: 'py-3.5',
+        fontSize: 'text-sm',
         borderRadius: 'rounded-lg',
       },
     },
     variants: {
+      text: buttonText,
       filled: buttonFilled,
       gradient: buttonGradient,
       outlined: buttonOutlined,
-      text: buttonText,
     },
   },
 };

@@ -13,17 +13,17 @@ import { propTypesColors } from '../generic';
  */
 
 // typescript types
-export type variant = 'filled' | 'outlined' | 'gradient' | 'text';
-export type size = 'sm' | 'md' | 'lg';
-export type color = 'white' | colors;
-export type fullWidth = boolean;
 export type className = string;
+export type fullWidth = boolean;
 export type children = ReactNode;
+export type color = 'white' | colors;
+export type size = 'sm' | 'md' | 'lg';
+export type variant = 'filled' | 'outlined' | 'gradient' | 'text';
 
 // javascript prop-types
-export const propTypesVariant: any = ['filled', 'outlined', 'gradient', 'text'];
 export const propTypesSize: any = ['sm', 'md', 'lg'];
-export const propTypesColor: any = ['white', ...propTypesColors];
 export const propTypesFullWidth: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
 export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesColor: any = ['white', ...propTypesColors];
+export const propTypesVariant: any = ['filled', 'outlined', 'gradient', 'text'];

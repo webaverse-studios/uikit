@@ -8,12 +8,20 @@ type Config = ViteStoryBookConfig & StorybookConfig;
 const config: Config = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
+    'storybook-dark-mode',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
   ],
   core: {
     builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+  },
+  features: {
+    previewMdx2: true,
+    storyStoreV7: true,
+    buildStoriesJson: true,
+    argTypeTargetsV7: true,
+    warnOnLegacyHierarchySeparator: true,
   },
   framework: {
     options: {},
