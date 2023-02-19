@@ -50,4 +50,4 @@ function withMT(tailwindConfig: Config) {
   return merge(webaverseTailwindConfig, { ...tailwindConfig });
 }
 
-module.exports = withMT;
+export default withMT;
