@@ -15,7 +15,10 @@ export type KeyValuePair<K extends keyof any = string, V = string> = Record<K, V
 
 const webaverseTailwindConfig = {
   darkMode: 'class',
-  content: ['../components/**/*.{js,ts,jsx,tsx}', '../theme/components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './node_modules/@webaverse-studios/uikit/components/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@webaverse-studios/uikit/theme/components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     colors,
     fontFamily: typography,
@@ -27,8 +30,6 @@ const webaverseTailwindConfig = {
 
 /**
  * Merge @webaverse-studios-tailwind and Tailwind CSS configurations
- * @param {object} tailwindConfig - Tailwind config object
- * @return {object} new config object
  */
 function withMT(tailwindConfig: Config) {
   const themeFont = webaverseTailwindConfig.theme.fontFamily;

@@ -100,5 +100,10 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "configurationDefaults": {
+    "[typescript]": {
+      "editor.semanticHighlighting.enabled": true
+    }
   }
 }

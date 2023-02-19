@@ -1,10 +1,6 @@
-const withMT = require('./src/utils/withMT');
-
 /** @type {import('tailwindcss').Config} */
-module.exports = withMT({
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {},
-  },
+module.exports = {
   plugins: [],
-});
+  theme: { extend: {} },
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+};

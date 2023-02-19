@@ -1,4 +1,4 @@
-import '../src/index.css';
+import './main.css';
 
 export const parameters = {
   backgrounds: { default: 'dark' },
