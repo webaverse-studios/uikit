@@ -28,6 +28,7 @@ import objectsToString from '@/uikit/utils/objectsToString';
 export interface ButtonProps extends ComponentProps<'button'> {
   size?: size;
   color?: color;
+  rounded?: boolean;
   variant?: variant;
   children: children;
   fullWidth?: fullWidth;
@@ -35,7 +36,7 @@ export interface ButtonProps extends ComponentProps<'button'> {
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, size, color, fullWidth, className, children, ...rest }, ref) => {
+  ({ variant, size, color, fullWidth, className, children, rounded, ...rest }, ref) => {
     // 1. init
     const { button } = useTheme();
     const { valid, defaultProps, styles } = button;
@@ -44,6 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     // 2. set default props
     size = size ?? defaultProps.size;
     color = color ?? defaultProps.color;
+    rounded = rounded ?? defaultProps.rounded;
     variant = variant ?? defaultProps.variant;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
     className = className ?? defaultProps.className;
@@ -52,7 +54,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonBase = objectsToString(base.initial);
     const buttonVariant = objectsToString(
       variants[findMatch(valid.variants, variant, 'filled') as keyof ButtonStyleProps['variants']][
-        findMatch(valid.colors, color, 'blue')
+        findMatch(valid.colors, color, 'white')
       ],
     );
 
@@ -62,6 +64,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const classes = twMerge(
       classnames(buttonBase, buttonSize, buttonVariant, {
+        [objectsToString(base.rounded)]: rounded,
         [objectsToString(base.fullWidth)]: fullWidth,
       }),
       className,

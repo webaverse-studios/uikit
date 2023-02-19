@@ -1,11 +1,10 @@
-import { themes } from '@storybook/theming';
-
 import '../src/index.css';
 
 export const parameters = {
   backgrounds: { default: 'dark' },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
+    expanded: true,
     matchers: {
       date: /Date$/,
       color: /(background|color)$/i,

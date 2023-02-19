@@ -81,6 +81,7 @@
     "postcss": "^8.4.21",
     "postcss-nesting": "^11.2.1",
     "prettier": "^2.8.4",
+    "react-docgen-typescript": "^2.2.2",
     "storybook": "^7.0.0-beta.49",
     "storybook-addon-designs": "^7.0.0-beta.2",
     "storybook-dark-mode": "^2.0.6",

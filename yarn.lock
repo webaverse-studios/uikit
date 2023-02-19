@@ -5069,6 +5069,7 @@ __metadata:
     prettier: ^2.8.4
     prop-types: ^15.8.1
     react: 18.x
+    react-docgen-typescript: ^2.2.2
     react-dom: 18.x
     storybook: ^7.0.0-beta.49
     storybook-addon-designs: ^7.0.0-beta.2
@@ -13834,7 +13835,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:^2.1.1":
+"react-docgen-typescript@npm:^2.1.1, react-docgen-typescript@npm:^2.2.2":
   version: 2.2.2
   resolution: "react-docgen-typescript@npm:2.2.2"
   peerDependencies:

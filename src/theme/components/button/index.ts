@@ -10,6 +10,7 @@ import buttonText from './buttonText';
 export interface DefaultButtonProps {
   size: size;
   color: color;
+  rounded: boolean;
   variant: variant;
   fullWidth: fullWidth;
   className: className;
@@ -22,9 +23,9 @@ export interface ButtonValidProps {
 }
 
 export interface ButtonStyleProps {
-  base: { initial: Obj; fullWidth: Obj };
-
   sizes: { sm: Obj; md: Obj; lg: Obj };
+
+  base: { initial: Obj; fullWidth: Obj; rounded: Obj };
 
   variants: {
     text: typeof buttonText;
@@ -44,7 +45,8 @@ const button: ButtonStyleTypes = {
   defaultProps: {
     size: 'md',
     className: '',
-    color: 'blue',
+    color: 'white',
+    rounded: false,
     fullWidth: false,
     variant: 'filled',
   },
@@ -61,13 +63,16 @@ const button: ButtonStyleTypes = {
         textAlign: 'text-center',
         userSelect: 'select-none',
         textTransform: 'uppercase',
-        transition: 'transition-all',
         verticalAlign: 'align-middle',
+        transition: 'transition-all duration-500',
         disabled: 'disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none',
       },
       fullWidth: {
         width: 'w-full',
         display: 'block',
+      },
+      rounded: {
+        borderRadius: 'rounded-lg',
       },
     },
     sizes: {
@@ -75,19 +80,16 @@ const button: ButtonStyleTypes = {
         py: 'py-2',
         px: 'px-4',
         fontSize: 'text-xs',
-        borderRadius: 'rounded-lg',
       },
       md: {
         py: 'py-3',
         px: 'px-6',
         fontSize: 'text-xs',
-        borderRadius: 'rounded-lg',
       },
       lg: {
         px: 'px-7',
         py: 'py-3.5',
         fontSize: 'text-sm',
-        borderRadius: 'rounded-lg',
       },
     },
     variants: {
