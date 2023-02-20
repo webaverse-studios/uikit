@@ -73,14 +73,14 @@ export const Themed: Story = {
           transparent
           open={open}
           handler={handleOpen}
-          className="bg-center bg-no-repeat h-96 bg-[url('../../../../public/ui/bg_frame.png')] bg-contain flex justify-center items-center flex-col"
+          className="flex h-96 flex-col items-center justify-center bg-[url('../../../../public/ui/bg_frame.png')] bg-contain bg-center bg-no-repeat"
         >
           <img
             src="../../../../public/ui/head.png"
-            className="w-full h-auto max-w-[20%] absolute top-0 -translate-y-2/4"
+            className="absolute top-0 h-auto w-full max-w-[20%] -translate-y-2/4"
           />
 
-          <DialogHeader className="w-3/4 text-white text-center flex justify-center">
+          <DialogHeader className="flex w-3/4 justify-center text-center text-white">
             This is a themed dialog!
           </DialogHeader>
 
