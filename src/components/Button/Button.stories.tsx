@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { propTypesColor, propTypesSize, propTypesVariant } from '@/uikit/types/components/button';
+import {
+  ButtonPropTypesColor,
+  ButtonPropTypesSize,
+  ButtonPropTypesVariant,
+} from '@/uikit/types/components/button';
 
 import { Button } from './index';
 
@@ -12,17 +16,17 @@ const meta: Meta<typeof Button> = {
     variant: {
       defaultValue: 'filled',
       control: { type: 'select' },
-      options: propTypesVariant,
+      options: ButtonPropTypesVariant,
     },
     size: {
       defaultValue: 'md',
       control: { type: 'select' },
-      options: propTypesSize,
+      options: ButtonPropTypesSize,
     },
     color: {
       defaultValue: 'white',
       control: { type: 'select' },
-      options: propTypesColor,
+      options: ButtonPropTypesColor,
     },
     rounded: {
       defaultValue: false,

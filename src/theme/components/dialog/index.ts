@@ -1,13 +1,18 @@
 // types
 import type { Obj } from '@/uikit/types';
-import type { size, dismiss, animate, className } from '@/uikit/types/components/dialog';
-import { propTypesSize } from '@/uikit/types/components/dialog';
+import type {
+  DialogSize,
+  DialogDismiss,
+  DialogAnimate,
+  DialogClassName,
+} from '@/uikit/types/components/dialog';
+import { DialogPropTypesSize } from '@/uikit/types/components/dialog';
 
 export interface DefaultDialogProps {
-  size: size;
-  dismiss: dismiss;
-  animate: animate;
-  className: className;
+  size: DialogSize;
+  dismiss: DialogDismiss;
+  animate: DialogAnimate;
+  className: DialogClassName;
 }
 
 export interface DialogValidProps {
@@ -40,15 +45,10 @@ const dialog: DialogStylesType = {
   defaultProps: {
     size: 'md',
     dismiss: {},
-    animate: {
-      unmount: {},
-      mount: {},
-    },
     className: '',
+    animate: { unmount: {}, mount: {} },
   },
-  valid: {
-    sizes: propTypesSize,
-  },
+  valid: { sizes: DialogPropTypesSize },
   styles: {
     base: {
       backdrop: {

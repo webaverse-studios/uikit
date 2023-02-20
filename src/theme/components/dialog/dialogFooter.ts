@@ -1,10 +1,10 @@
 // types
 import type { Obj } from '@/uikit/types';
-import type { className } from '@/uikit/types/components/dialog';
+import type { DialogClassName } from '@/uikit/types/components/dialog';
 
 export interface DialogFooterStylesType {
   defaultProps: {
-    className: className;
+    className: DialogClassName;
   };
   styles: {
     base: Obj;

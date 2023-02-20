@@ -5,19 +5,19 @@ import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '@/uikit/context/theme';
 import {
-  divider,
-  className,
-  children,
-  propTypesDivider,
-  propTypesClassName,
-  propTypesChildren,
+  DIalogDivider,
+  DialogClassName,
+  DialogChildren,
+  DialogPropTypesDivider,
+  DialogPropTypesClassName,
+  DialogPropTypesChildren,
 } from '@/uikit/types/components/dialog';
 import objectsToString from '@/uikit/utils/objectsToString';
 
 export interface DialogBodyProps extends ComponentProps<'div'> {
-  divider?: divider;
-  children: children;
-  className?: className;
+  divider?: DIalogDivider;
+  children: DialogChildren;
+  className?: DialogClassName;
 }
 
 export const DialogBody = forwardRef<HTMLDivElement, DialogBodyProps>(
@@ -49,9 +49,9 @@ export const DialogBody = forwardRef<HTMLDivElement, DialogBodyProps>(
 );
 
 DialogBody.propTypes = {
-  divider: propTypesDivider,
-  className: propTypesClassName,
-  children: propTypesChildren,
+  divider: DialogPropTypesDivider,
+  className: DialogPropTypesClassName,
+  children: DialogPropTypesChildren,
 };
 
 DialogBody.displayName = 'WebaverseTailwind.DialogBody';

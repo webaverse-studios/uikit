@@ -1,11 +1,11 @@
 // types
 import type { Obj } from '@/uikit/types';
-import type { className, divider } from '@/uikit/types/components/dialog';
+import type { DialogClassName, DIalogDivider } from '@/uikit/types/components/dialog';
 
 export interface DialogBodyStylesType {
   defaultProps: {
-    className: className;
-    divider: divider;
+    className: DialogClassName;
+    divider: DIalogDivider;
   };
   styles: {
     base: {

@@ -1,7 +1,8 @@
 const typography = {
-  sans: ['Roboto', 'sans-serif'],
-  serif: ['Roboto Slab', 'serif'],
-  body: ['Roboto', 'sans-serif'],
+  electro: ['Electro'],
+  sans: ['Electro', 'Roboto', 'sans-serif'],
+  serif: ['Electro', 'Roboto Slab', 'serif'],
+  body: ['Electro', 'Roboto', 'sans-serif'],
 };
 
 export default typography;

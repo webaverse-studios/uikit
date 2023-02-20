@@ -26,10 +26,8 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'uikit',
-      formats: ['es', 'umd'],
-      fileName: (format) => `uikit.${format}.js`,
+      entry: path.resolve(__dirname, 'src/index.ts'),
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],

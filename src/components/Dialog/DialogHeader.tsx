@@ -8,13 +8,13 @@ import { twMerge } from 'tailwind-merge';
 
 // types
 import { useTheme } from '@/uikit/context/theme';
-import type { className, children } from '@/uikit/types/components/dialog';
-import { propTypesClassName, propTypesChildren } from '@/uikit/types/components/dialog';
+import type { DialogClassName, DialogChildren } from '@/uikit/types/components/dialog';
+import { DialogPropTypesClassName, DialogPropTypesChildren } from '@/uikit/types/components/dialog';
 import objectsToString from '@/uikit/utils/objectsToString';
 
 export interface DialogHeaderProps extends ComponentProps<'div'> {
-  className?: className;
-  children: children;
+  className?: DialogClassName;
+  children: DialogChildren;
 }
 
 export const DialogHeader = forwardRef<HTMLDivElement, DialogHeaderProps>(
@@ -43,8 +43,8 @@ export const DialogHeader = forwardRef<HTMLDivElement, DialogHeaderProps>(
 );
 
 DialogHeader.propTypes = {
-  className: propTypesClassName,
-  children: propTypesChildren,
+  className: DialogPropTypesClassName,
+  children: DialogPropTypesChildren,
 };
 
 DialogHeader.displayName = 'WebaverseTailwind.DialogHeader';

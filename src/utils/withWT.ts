@@ -15,15 +15,12 @@ export type KeyValuePair<K extends keyof any = string, V = string> = Record<K, V
 
 const webaverseTailwindConfig = {
   darkMode: 'class',
-  content: [
-    './node_modules/@webaverse-studios/uikit/components/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@webaverse-studios/uikit/theme/components/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: [],
   theme: {
     colors,
-    fontFamily: typography,
     boxShadow: shadows,
     screens: breakpoints,
+    fontFamily: typography,
   },
   plugins: [],
 };
@@ -31,7 +28,7 @@ const webaverseTailwindConfig = {
 /**
  * Merge @webaverse-studios-tailwind and Tailwind CSS configurations
  */
-function withMT(tailwindConfig: Config) {
+export function withWT(tailwindConfig: Config) {
   const themeFont = webaverseTailwindConfig.theme.fontFamily;
 
   if (tailwindConfig?.theme?.fontFamily) {
@@ -42,6 +39,7 @@ function withMT(tailwindConfig: Config) {
       | [fontFamily: string | string[], configuration: Partial<{ fontFeatureSettings: string }>]
     >;
 
+    themeFont.electro = (baseFontFamily.electron as string[]) || themeFont.electro;
     themeFont.sans = (baseFontFamily.sans as string[]) || themeFont.sans;
     themeFont.body = (baseFontFamily.body as string[]) || themeFont.body;
     themeFont.serif = (baseFontFamily.serif as string[]) || themeFont.serif;
@@ -49,5 +47,3 @@ function withMT(tailwindConfig: Config) {
 
   return merge(webaverseTailwindConfig, { ...tailwindConfig });
 }
-
-export default withMT;

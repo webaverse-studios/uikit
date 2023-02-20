@@ -13,17 +13,17 @@ import { propTypesColors } from '../generic';
  */
 
 // typescript types
-export type className = string;
-export type fullWidth = boolean;
-export type children = ReactNode;
-export type color = 'white' | colors;
-export type size = 'sm' | 'md' | 'lg';
-export type variant = 'filled' | 'outlined' | 'gradient' | 'text';
+export type ButtonClassName = string;
+export type ButtonFullWidth = boolean;
+export type ButtonChildren = ReactNode;
+export type ButtonColor = 'white' | colors;
+export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonVariant = 'filled' | 'outlined' | 'gradient' | 'text';
 
 // javascript prop-types
-export const propTypesSize: any = ['sm', 'md', 'lg'];
-export const propTypesFullWidth: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
-export const propTypesColor: any = ['white', ...propTypesColors];
-export const propTypesVariant: any = ['filled', 'outlined', 'gradient', 'text'];
+export const ButtonPropTypesSize: any = ['sm', 'md', 'lg'];
+export const ButtonPropTypesFullWidth: any = PropTypes.bool;
+export const ButtonPropTypesClassName: any = PropTypes.string;
+export const ButtonPropTypesChildren: any = PropTypes.node.isRequired;
+export const ButtonPropTypesColor: any = ['white', ...propTypesColors];
+export const ButtonPropTypesVariant: any = ['filled', 'outlined', 'gradient', 'text'];

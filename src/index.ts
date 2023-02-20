@@ -11,4 +11,7 @@ export * from './context/theme';
 export * from './theme/index';
 
 // utils
-export { default as withMT } from './utils/withMT';
+export * from './utils/withWT';
+
+// Types
+export * from './types';

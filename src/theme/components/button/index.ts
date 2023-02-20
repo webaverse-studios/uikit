@@ -1,6 +1,16 @@
 import type { Obj } from '@/uikit/types';
-import type { variant, size, color, fullWidth, className } from '@/uikit/types/components/button';
-import { propTypesVariant, propTypesSize, propTypesColor } from '@/uikit/types/components/button';
+import type {
+  ButtonVariant,
+  ButtonClassName,
+  ButtonColor,
+  ButtonSize,
+  ButtonFullWidth,
+} from '@/uikit/types/components/button';
+import {
+  ButtonPropTypesVariant,
+  ButtonPropTypesSize,
+  ButtonPropTypesColor,
+} from '@/uikit/types/components/button';
 
 import buttonFilled from './buttonFilled';
 import buttonGradient from './buttonGradient';
@@ -8,12 +18,12 @@ import buttonOutlined from './buttonOutlined';
 import buttonText from './buttonText';
 
 export interface DefaultButtonProps {
-  size: size;
-  color: color;
+  size: ButtonSize;
+  color: ButtonColor;
   rounded: boolean;
-  variant: variant;
-  fullWidth: fullWidth;
-  className: className;
+  variant: ButtonVariant;
+  fullWidth: ButtonFullWidth;
+  className: ButtonClassName;
 }
 
 export interface ButtonValidProps {
@@ -51,9 +61,9 @@ const button: ButtonStyleTypes = {
     variant: 'filled',
   },
   valid: {
-    sizes: propTypesSize,
-    colors: propTypesColor,
-    variants: propTypesVariant,
+    sizes: ButtonPropTypesSize,
+    colors: ButtonPropTypesColor,
+    variants: ButtonPropTypesVariant,
   },
   styles: {
     base: {

@@ -13,21 +13,21 @@ import { propTypesDismissType, propTypesAnimation } from '../generic';
  */
 
 // typescript types
-export type open = boolean;
-export type divider = boolean;
-export type className = string;
-export type animate = animation;
-export type children = ReactNode;
-export type dismiss = dismissType;
-export type handler = Dispatch<SetStateAction<any>>;
-export type size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+export type DialogOpen = boolean;
+export type DIalogDivider = boolean;
+export type DialogClassName = string;
+export type DialogAnimate = animation;
+export type DialogChildren = ReactNode;
+export type DialogDismiss = dismissType;
+export type DialogHandler = Dispatch<SetStateAction<any>>;
+export type DialogSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
 // javascript prop-types
-export const propTypesDivider: any = bool;
-export const propTypesHandler: any = func;
-export const propTypesClassName: any = string;
-export const propTypesOpen: any = bool.isRequired;
-export const propTypesChildren: any = node.isRequired;
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesDismiss: any = propTypesDismissType;
-export const propTypesSize: any = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
+export const DialogPropTypesDivider: any = bool;
+export const DialogPropTypesHandler: any = func;
+export const DialogPropTypesClassName: any = string;
+export const DialogPropTypesOpen: any = bool.isRequired;
+export const DialogPropTypesChildren: any = node.isRequired;
+export const DialogPropTypesAnimate: any = propTypesAnimation;
+export const DialogPropTypesDismiss: any = propTypesDismissType;
+export const DialogPropTypesSize: any = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];

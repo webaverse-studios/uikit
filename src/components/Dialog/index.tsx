@@ -21,20 +21,20 @@ import { twMerge } from 'tailwind-merge';
 import { useTheme } from '@/uikit/context/theme';
 import type { DialogStyleProps } from '@/uikit/theme';
 import {
-  open,
-  handler,
-  size,
-  dismiss,
-  animate,
-  className,
-  children,
-  propTypesOpen,
-  propTypesHandler,
-  propTypesSize,
-  propTypesDismiss,
-  propTypesAnimate,
-  propTypesClassName,
-  propTypesChildren,
+  DialogOpen,
+  DialogHandler,
+  DialogSize,
+  DialogDismiss,
+  DialogAnimate,
+  DialogChildren,
+  DialogClassName,
+  DialogPropTypesOpen,
+  DialogPropTypesHandler,
+  DialogPropTypesSize,
+  DialogPropTypesDismiss,
+  DialogPropTypesAnimate,
+  DialogPropTypesClassName,
+  DialogPropTypesChildren,
 } from '@/uikit/types/components/dialog';
 import type { NewAnimatePresenceProps } from '@/uikit/types/generic';
 import findMatch from '@/uikit/utils/findMatch';
@@ -45,18 +45,33 @@ import { DialogFooter, DialogFooterProps } from './DialogFooter';
 import { DialogHeader, DialogHeaderProps } from './DialogHeader';
 
 export interface DialogProps extends ComponentProps<'div'> {
-  open: open;
-  handler: handler;
-  size?: size;
-  dismiss?: dismiss;
-  animate?: animate;
-  children: children;
-  className?: className;
+  open: DialogOpen;
+  size?: DialogSize;
   transparent?: boolean;
+  withBackdrop?: boolean;
+  handler: DialogHandler;
+  dismiss?: DialogDismiss;
+  animate?: DialogAnimate;
+  children: DialogChildren;
+  className?: DialogClassName;
 }
 
 const Dialog = forwardRef<HTMLDivElement, DialogProps>(
-  ({ open, handler, size, dismiss, animate, className, children, transparent, ...rest }, ref) => {
+  (
+    {
+      open,
+      handler,
+      size,
+      dismiss,
+      animate,
+      className,
+      children,
+      transparent,
+      withBackdrop = true,
+      ...rest
+    },
+    ref,
+  ) => {
     // 1. init
     const { dialog } = useTheme();
 
@@ -85,8 +100,6 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
       ),
       className,
     );
-
-    console.log(dialogClasses);
 
     // 4. set animation
     const animation = {
@@ -146,7 +159,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
                   variants={backdropAnimation}
                   transition={{ duration: 0.2 }}
                   animate={open ? 'mount' : 'unmount'}
-                  className={size === 'xxl' ? '' : backdropClasses}
+                  className={withBackdrop ? backdropClasses : ''}
                 >
                   <motion.div
                     {...getFloatingProps({
@@ -174,13 +187,13 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
 );
 
 Dialog.propTypes = {
-  open: propTypesOpen,
-  handler: propTypesHandler,
-  size: oneOf(propTypesSize),
-  dismiss: propTypesDismiss,
-  animate: propTypesAnimate,
-  className: propTypesClassName,
-  children: propTypesChildren,
+  open: DialogPropTypesOpen,
+  handler: DialogPropTypesHandler,
+  size: oneOf(DialogPropTypesSize),
+  dismiss: DialogPropTypesDismiss,
+  animate: DialogPropTypesAnimate,
+  children: DialogPropTypesChildren,
+  className: DialogPropTypesClassName,
 };
 
 Dialog.displayName = 'WebaverseTailwind.Dialog';

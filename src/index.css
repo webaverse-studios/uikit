@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-weight: 400;
+  font-family: 'Electro';
+  font-style: normal;
+  src: local(''), url('../public/fonts/electroharmonix.ttf') format('ttf');
+}

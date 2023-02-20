@@ -7,32 +7,32 @@ import { twMerge } from 'tailwind-merge';
 import { useTheme } from '@/uikit/context/theme';
 import { ButtonStyleProps } from '@/uikit/theme';
 import type {
-  variant,
-  size,
-  color,
-  fullWidth,
-  className,
-  children,
+  ButtonVariant,
+  ButtonSize,
+  ButtonColor,
+  ButtonFullWidth,
+  ButtonClassName,
+  ButtonChildren,
 } from '@/uikit/types/components/button';
 import {
-  propTypesVariant,
-  propTypesSize,
-  propTypesColor,
-  propTypesFullWidth,
-  propTypesClassName,
-  propTypesChildren,
+  ButtonPropTypesVariant,
+  ButtonPropTypesSize,
+  ButtonPropTypesColor,
+  ButtonPropTypesFullWidth,
+  ButtonPropTypesClassName,
+  ButtonPropTypesChildren,
 } from '@/uikit/types/components/button';
 import findMatch from '@/uikit/utils/findMatch';
 import objectsToString from '@/uikit/utils/objectsToString';
 
 export interface ButtonProps extends ComponentProps<'button'> {
-  size?: size;
-  color?: color;
+  size?: ButtonSize;
+  color?: ButtonColor;
   rounded?: boolean;
-  variant?: variant;
-  children: children;
-  fullWidth?: fullWidth;
-  className?: className;
+  variant?: ButtonVariant;
+  children: ButtonChildren;
+  fullWidth?: ButtonFullWidth;
+  className?: ButtonClassName;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -89,12 +89,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.propTypes = {
-  size: oneOf(propTypesSize),
-  children: propTypesChildren,
-  color: oneOf(propTypesColor),
-  fullWidth: propTypesFullWidth,
-  className: propTypesClassName,
-  variant: oneOf(propTypesVariant),
+  size: oneOf(ButtonPropTypesSize),
+  children: ButtonPropTypesChildren,
+  color: oneOf(ButtonPropTypesColor),
+  fullWidth: ButtonPropTypesFullWidth,
+  className: ButtonPropTypesClassName,
+  variant: oneOf(ButtonPropTypesVariant),
 };
 
 Button.displayName = 'WebaverseTailwind.Button';

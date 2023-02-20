@@ -5,14 +5,17 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/uikit.umd.js",
-  "module": "./dist/uikit.es.js",
+  "main": "./dist/uikit.umd.cjs",
+  "module": "./dist/uikit.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    "./dist/style.css": "./dist/style.css",
     ".": {
-      "import": "./dist/uikit.es.js",
-      "require": "./dist/uikit.umd.js"
+      "import": "./dist/uikit.js",
+      "require": "./dist/uikit.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "scripts": {
