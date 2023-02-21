@@ -1,7 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 const breakpoints = {
-  xxxs: '320px',
+  xxs: '320px',
   xs: '475px',
   'lg-max': { max: '960px' },
   ultra: '2520px',

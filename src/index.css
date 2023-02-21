@@ -7,7 +7,7 @@
   font-weight: 400;
   font-family: 'Electro';
   font-style: normal;
-  src: local(''), url('../public/fonts/electroharmonix.ttf') format('ttf');
+  src: local(''), url('../public/fonts/electro/electroharmonix.ttf') format('ttf');
 }
 
 /* NovaSquare */
@@ -15,5 +15,91 @@
   font-weight: 400;
   font-family: 'NovaSquare';
   font-style: normal;
-  src: local(''), url('../public/fonts/NovaSquare-Regular.ttf') format('ttf');
+  src: local(''), url('../public/fonts/nova_square/NovaSquare-Regular.ttf') format('ttf');
+}
+
+/* TT Square Font */
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/ztt_squares_condensed_regular-webfont.woff2') format('woff2'),
+    url('../public/fonts/tt_square/ztt_squares_condensed_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_thin_italic-webfont.woff2')
+      format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_thin_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_thin-webfont.woff2') format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_regular_italic-webfont.woff2')
+      format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_regular_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_light_italic-webfont.woff2')
+      format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_light_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_light-webfont.woff2') format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_bold_italic-webfont.woff2')
+      format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_bold_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_bold-webfont.woff2') format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_black_italic-webfont.woff2')
+      format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_black_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT-Squares';
+  src: url('../public/fonts/tt_square/tt_squares_condensed_black-webfont.woff2') format('woff2'),
+    url('../public/fonts/tt_square/tt_squares_condensed_black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

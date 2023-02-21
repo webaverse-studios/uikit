@@ -1,9 +1,10 @@
 const typography = {
   electro: ['Electro'],
   'nova-square': ['NovaSquare'],
-  sans: ['Electro', 'Roboto', 'sans-serif'],
-  serif: ['Electro', 'Roboto Slab', 'serif'],
-  body: ['Electro', 'Roboto', 'sans-serif'],
+  'tt-square': ['TT-Squares'],
+  sans: ['tt-square', 'Roboto', 'sans-serif'],
+  serif: ['tt-square', 'Roboto Slab', 'serif'],
+  body: ['tt-square', 'Roboto', 'sans-serif'],
 };
 
 export default typography;
