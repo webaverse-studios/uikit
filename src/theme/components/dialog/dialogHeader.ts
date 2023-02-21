@@ -23,7 +23,7 @@ const dialogHeader: DialogHeaderStylesType = {
       p: 'p-4',
       color: 'text-blue-gray-900',
       fontSmoothing: 'antialiased',
-      fontFamily: 'font-sans',
+      fontFamily: 'font-tt-square',
       fontSize: 'text-2xl',
       fontWeight: 'font-semibold',
       lineHeight: 'leading-snug',

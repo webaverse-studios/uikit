@@ -26,7 +26,7 @@ const dialogBody: DialogBodyStylesType = {
         p: 'p-4',
         position: 'relative',
         fontSize: 'text-base',
-        fontFamily: 'font-sans',
+        fontFamily: 'font-tt-square',
         fontWeight: 'font-light',
         color: 'text-blue-gray-500',
         fontSmoothing: 'antialiased',

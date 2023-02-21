@@ -68,7 +68,7 @@ const button: ButtonStyleTypes = {
   styles: {
     base: {
       initial: {
-        fontFamily: 'font-sans',
+        fontFamily: 'font-tt-square',
         fontWeight: 'font-bold',
         textAlign: 'text-center',
         userSelect: 'select-none',

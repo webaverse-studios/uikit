@@ -68,7 +68,7 @@ const dialog: DialogStylesType = {
         bg: 'bg-white',
         position: 'relative',
         fontSize: 'text-base',
-        fontFamily: 'font-sans',
+        fontFamily: 'font-tt-square',
         boxShadow: 'shadow-2xl',
         fontWeight: 'font-light',
         borderRadius: 'rounded-lg',
