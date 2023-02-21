@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Electro Font */
 @font-face {
   font-weight: 400;
   font-family: 'Electro';
   font-style: normal;
   src: local(''), url('../public/fonts/electroharmonix.ttf') format('ttf');
+}
+
+/* NovaSquare */
+@font-face {
+  font-weight: 400;
+  font-family: 'NovaSquare';
+  font-style: normal;
+  src: local(''), url('../public/fonts/NovaSquare-Regular.ttf') format('ttf');
 }
