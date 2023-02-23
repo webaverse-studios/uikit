@@ -2,11 +2,12 @@ import path from 'path';
 
 import react from '@vitejs/plugin-react';
 import hq from 'alias-hq';
+import banner from 'vite-plugin-banner';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
-import * as packageJson from './package.json';
+import * as pkg from './package.json';
 
 export default defineConfig({
   css: {
@@ -20,6 +21,13 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
+    banner({
+      verify: false,
+      content: `'use client';`,
+    }),
+    banner(
+      `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n */`,
+    ),
   ],
   resolve: {
     alias: hq.get('rollup'),
@@ -30,7 +38,7 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'src/index.ts'),
     },
     rollupOptions: {
-      external: [...Object.keys(packageJson.peerDependencies)],
+      external: [...Object.keys(pkg.peerDependencies)],
       output: {
         globals: {
           react: 'React',
@@ -45,6 +53,9 @@ export default defineConfig({
         global: 'globalThis',
       },
     },
+  },
+  ssr: {
+    noExternal: true,
   },
   // VITEST CONFIG
   test: {
