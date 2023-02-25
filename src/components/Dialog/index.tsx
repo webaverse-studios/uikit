@@ -153,7 +153,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
       <FloatingPortal>
         <NewAnimatePresence>
           {open && (
-            <FloatingOverlay style={{ zIndex: 9999 }} lockScroll>
+            <FloatingOverlay style={{ zIndex: 999 }} lockScroll>
               <FloatingFocusManager context={context}>
                 <motion.div
                   exit="unmount"
